@@ -55,6 +55,23 @@
       document.getElementById("loader").style.display = "none";
       document.getElementById("main-content").style.display = "block";
     });
+
+    // When everything is loaded, auto-hide loader and try to play audio
+    window.addEventListener("load", function () {
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+
+        const audio = document.getElementById("testAudio");
+        audio.play()
+          .then(() => {
+            document.getElementById("soundPopup").style.display = "none";
+          })
+          .catch(() => {
+            document.getElementById("soundPopup").style.display = "flex";
+          });
+      }, 2000); // Optional loading delay
+    });
     
         // console stuff
     console.log("Completed all script stuff.");
@@ -76,7 +93,6 @@ bigWarning("Your disk space is almost full!");
 }
 
 criticalError("Something just got destoryed!!!!");
-    
   </script>
 </body>
 </html>
