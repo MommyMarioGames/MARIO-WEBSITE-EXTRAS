@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mario's Site!</title>
+  <script>
+  window.addEventListener('load', () => {
+    const testAudio = document.getElementById("testAudio");
+    const nextAudio = document.getElementById("nextAudio");
+    const soundPopup = document.getElementById("soundPopup");
+    const enableBtn = document.getElementById("enableSoundButton");
+
+    if (!testAudio || !nextAudio || !soundPopup || !enableBtn) {
+      console.warn("Audio elements or popup/button missing!");
+      return;
+    }
+
+    let played = false;
+
+    testAudio.play().then(() => {
+      played = true;
+      soundPopup.style.display = "none";
+    }).catch(() => {
+      setTimeout(() => {
+        if (!played) {
+          soundPopup.style.display = "flex";
+        }
+      }, 1000);
+    });
+
+    testAudio.addEventListener("ended", () => {
+      nextAudio.play().catch(err => {
+        console.warn("Next audio play failed:", err);
+      });
+    });
+
+    enableBtn.addEventListener("click", () => {
+      testAudio.play().then(() => {
+        soundPopup.style.display = "none";
+      }).catch(() => {
+        alert("Audio could not be played. Please try again or check your browser settings.");
+      });
+    });
+  });
+</script>
+
+</head>
+<body>
+
+<audio id="testAudio" preload="auto" src="https://files.catbox.moe/1vorne.mp3"></audio>
+
+<audio id="nextAudio" preload="auto" src="https://files.catbox.moe/1vorne.mp3"></audio>
+
+<div id="soundPopup" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.8); color:white; 
+  display:flex; justify-content:center; align-items:center; flex-direction:column; gap:20px; font-size:1.5em;">
+  <p>Please enable sound to continue listening :)</p>
+  <button id="enableSoundButton" style="font-size:1em; padding:10px 20px; cursor:pointer; border:none; border-radius:6px; background-color:#4CAF50; color:white;">Enable Sound</button>
+</div>
+
+
+  <!-- Custom Loader -->
+  <div id="loader">
+    <h1>Hello World!</h1>
+    <p>Give the site a couple of seconds to preload everything.</p>
+    <button id="skipButton">skip the preload.</button>
+  </div>
+
+  <!-- Main Site Content -->
+  <div id="main-content">
+
+    <div id="soundPopup" class="popup-overlay" style="display:none;">
+      <div class="popup-box">
+        <p>pls change sound to allow to continue visiting the site :) unless everything is just preloading.</p>
+      </div>
+    </div>
+
+    <div id="container">
+      <div id="topBar">nothing here!</div>
+      <div id="headerArea">
+        <nav id="navbar">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="videos.html">VIDEOS</a></li>
+            <li><a href="coollinkspls.html">COOL URLS</a></li>
+            <li><a href="lyrics.html">MUSIC</a></li>
+            <li>COMING SOON..</li>
+          </ul>
+        </nav>
+      </div>
+
+        <div id="flex">
+        <main>
+          <h1>These are just some videos or unused videos i have.</h1>
+          <h2>
+            <a href="https://www.youtube.com/@MarioGaming27401/videos" target="_blank">
+              Visit My Channel!
+            </a>
+          </h2>
+          <iframe width="940" height="580" src="https://www.youtube.com/embed/fF25tkWX4eg?si=yFxGeazIzJYSVs_h&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://drive.google.com/file/d/13s-HTFy9Fm8nPJ1qw0unKhl7leOhic88/preview" width="560" height="315" allow="autoplay"></iframe>
+        
+          <iframe src="https://drive.google.com/file/d/1F2Mm4M0Ox9edrllM1EK499dWY5T3Pk5O/preview" width="640" height="480" allow="autoplay"></iframe>
+          <h2>50 Subcriber Classic (Uncensored)</h2>
+          <iframe src="https://drive.google.com/file/d/1cvUWTkoOWqF53Rfsg6eLjm5ZChcn23dT/preview" width="640" height="480" allow="autoplay"></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/46_Vq8i_9io?si=00XnnPu6_40aiT4_" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          <p><strong>This one is funny since this one is 18+ for GOD KNOWS WHO.</strong></p>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/yRJg5mhq2Qk?si=gtCe3M-0RQcmzvOh" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+          <h3>
+            NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN
+            <a href="/spooky">.</a>
+            NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.NEVER AGAIN.
+          </h3>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/EMGs7hzdhI4?si=ddVJJUObZYe6kWxO" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/ADmIxMtjSeM?si=9du26Fg3EjEKkZVF" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          
+        </main>
+      </div>
+    </div>
+
+  <!-- No JavaScript Redirect -->
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=unsupported.html" />
+  </noscript>
+
+  <script>
+    // Skip button immediately hides loader and shows content
+    document.getElementById("skipButton").addEventListener("click", function () {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    });
+
+    // When everything is loaded, auto-hide loader and try to play audio
+    window.addEventListener("load", function () {
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+
+        const audio = document.getElementById("testAudio");
+        audio.play()
+          .then(() => {
+            document.getElementById("soundPopup").style.display = "none";
+          })
+          .catch(() => {
+            document.getElementById("soundPopup").style.display = "flex";
+          });
+      }, 2000); // Optional loading delay
+    });
+    
+        // console stuff
+    console.log("Completed all script stuff.");
+    console.warn("Warning: Check some stuff.");
+    console.error("ERROR: Something broke.");
+    function bigWarning(msg) {
+
+  console.warn(
+    "%cBigger Warning..: " + msg,
+    "color: black; background: yellow; font-size: 18px; font-weight: bold; padding: 4px 8px; border: 2px solid orange;"
+  );
+}
+
+bigWarning("Your disk space is almost full!");
+
+    
+    function criticalError(msg) {
+  console.error("%cCRITICAL ERROR: " + msg, "color: white; background: red; font-weight: bold; padding: 2px 6px;");
+}
+
+criticalError("Something just got destoryed!!!!");
+    
+  </script>
+</div>
+</body>
+</html>
+       <!-- THIS IS THE CSS !-->
+        <style>
+            /* user styles */
+
+            /* styles are what change the color and sizes of stuff on your site. */
+
+            /* these are variables that are being used in the code
+    these tended to confuse some people, so I only kept 
+    the images as variables */
+
+            :root {
+                --header-image: url('https://sadhost.neocities.org/images/layouts/wp.jpeg');
+                --body-bg-image: url('https://mariogaming27401.neocities.org/bgmariogames.png');
+
+                /* colors */
+                --content: #990000;
+            }
+
+            /* if you have the URL of a font, you can set it below */
+            /* feel free to delete this if it's not your vibe */
+
+            /* this seems like a lot for just one font and I would have to agree 
+    but I wanted to include an example of how to include a custom font.
+    If you download a font file you can upload it onto your Neocities
+    and then link it! Many fonts have separate files for each style
+    (bold, italic, etc. T_T) which is why there are so many!
+    
+    */
+
+            @font-face {
+                font-family: 'I know a ghost';
+                src: url('https://mariogaming27401.neocities.org/fonts/iknowaghost.ttf');
+            }
+
+            @font-face {
+                font-family: 'Comic Sans MS Bold';
+                src: url('https://mariogaming27401.neocities.org/fonts/design.graffiti.comicsansmsgras.ttf');
+                font-weight: bold;
+            }
+
+            @font-face {
+                font-family: 'Comic Sans MS';
+                src: url('https://mariogaming27401.neocities.org/fonts/comici.ttf');
+                font-style: italic;
+            }
+
+            @font-face {
+                font-family: 'Comic Sans MS Bold Italic';
+                src: url('https://mariogaming27401.neocities.org/fonts/comicz.ttf');
+                font-style: italic;
+                font-weight: bold;
+            }
+html{
+  cursor: url('images/cursorsite_32x32.png'), auto;
+}
+            body {
+                font-family: 'I know a ghost', sans-serif;
+                margin: 0;
+                background-color: #5c0505;
+                /* you can delete the line below if you'd prefer to not use an image */
+                background-size: 720px;
+                color: #f5f5f5;
+                background-image: var(--body-bg-image);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            /* below this line is CSS for the layout */
+
+            /* this is a CSS comment
+    to uncomment a line of CSS, remove the * and the /
+    before and after the text */
+
+
+            /* the "container" is what wraps your entire website */
+            /* if you want something (like the header) to be Wider than
+    the other elements, you will need to move that div outside
+    of the container */
+            #container {
+                max-width: 900px;
+                /* this is the width of your layout! */
+                /* if you change the above value, scroll to the bottom
+      and change the media query according to the comment! */
+                margin: 0 auto;
+                /* this centers the entire page */
+            }
+
+            /* the area below is for all links on your page
+    EXCEPT for the navigation */
+            #container a {
+                color: #f00707;
+                font-weight: bold;
+                /* if you want to remove the underline
+      you can add a line below here that says:
+      text-decoration:none; */
+            }
+
+            #header {
+                width: 100%;
+                background-color: #3b1212;
+                /* header color here! */
+                height: 150px;
+                /* this is only for a background image! */
+                /* if you want to put images IN the header, 
+      you can add them directly to the <div id="header"></div> element! */
+                background-image: var(--header-image);
+                background-size: 100%;
+            }
+
+            /* navigation section!! */
+            #navbar {
+                height: 40px;
+                background-color: #140000;
+                /* navbar color */
+                width: 100%;
+            }
+
+            #navbar ul {
+                display: flex;
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                justify-content: space-evenly;
+            }
+
+            #navbar li {
+                padding-top: 10px;
+            }
+
+            /* navigation links*/
+            #navbar li a {
+                color: #f5f5f5;
+                /* navbar text color */
+                font-weight: 800;
+                text-decoration: none;
+                /* this removes the underline */
+            }
+
+            /* navigation link when a link is hovered over */
+            #navbar li a:hover {
+                color: #ff0000;
+                text-decoration: underline;
+            }
+
+            #flex {
+                display: flex;
+            }
+
+            /* this colors BOTH sidebars
+    if you want to style them separately,
+    create styles for #leftSidebar and #rightSidebar */
+            aside {
+                background-color: #050000;
+                width: 200px;
+                padding: 20px;
+                font-size: smaller;
+                /* this makes the sidebar text slightly smaller */
+            }
+
+
+            /* this is the color of the main content area,
+    between the sidebars! */
+            main {
+                background-color: #5e0c0c;
+                flex: 1;
+                padding: 20px;
+                order: 2;
+            }
+
+            /* what's this "order" stuff about??
+    allow me to explain!
+    if you're using both sidebars, the "order" value
+    tells the CSS the order in which to display them.
+    left sidebar is 1, content is 2, and right sidebar is 3! */
+
+            */ #leftSidebar {
+                order: 1;
+            }
+
+            #rightSidebar {
+                order: 3;
+            }
+
+            footer {
+                background-color: #1a0707;
+                /* background color for footer */
+                width: 100%;
+                height: 40px;
+                padding: 10px;
+                text-align: center;
+                /* this centers the footer text */
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: "white";
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            strong {
+                /* this styles bold text */
+                color: #730808;
+            }
+
+            /* this is just a cool box, it's the darker colored one */
+            .box {
+                background-color: #631212;
+                border: 1px solid #450d0d;
+                padding: 10px;
+            }
+
+            /* CSS for extras */
+
+            #topBar {
+                width: 100%;
+                height: 30px;
+                padding: 10px;
+                font-size: smaller;
+                background-color: #290404;
+            }
+
+
+            /* BELOW THIS POINT IS MEDIA QUERY */
+
+            /* so you wanna change the width of your page? 
+    by default, the container width is 900px.
+    in order to keep things responsive, take your new height,
+    and then subtrack it by 100. use this new number as the 
+    "max-width" value below
+    */
+
+            @media only screen and (max-width: 800px) {
+                #flex {
+                    flex-wrap: wrap;
+                }
+
+                aside {
+                    width: 100%;
+                }
+
+                /* the order of the items is adjusted here for responsiveness!
+      since the sidebars would be too small on a mobile device.
+      feel free to play around with the order!
+      */
+                main {
+                    order: 1;
+                }
+
+                #leftSidebar {
+                    order: 2;
+                }
+
+                #rightSidebar {
+                    order: 3;
+                }
+
+                #navbar ul {
+                    flex-wrap: wrap;
+                }
+            }
+            
+            .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 1, 1, 100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-box {
+  background: #5c0505;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup-box button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'I know a ghost', sans-serif;
+}            
+
+
+    /* Custom Loader styles */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #0f0000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      z-index: 9999;
+      text-align: center;
+    }
+
+    #loader h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #730808;
+    }
+
+    #loader p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    #skipButton {
+      padding: 10px 20px;
+      background: #ff0000;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+        </style>
