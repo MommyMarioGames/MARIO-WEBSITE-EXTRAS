@@ -34,12 +34,24 @@
 
       <div id="flex">
         <main>
-          
+          <iframe 
+    src="https://file-browser-production-477d.up.railway.app" 
+    style="width:100%; height:100vh; border:none;" 
+    sandbox="allow-scripts allow-same-origin allow-forms">
+</iframe>
+<button onclick="openFileBrowser()">Open File Browser</button>
         </main>
-
+<script>
+function openFileBrowser() {
+    window.open(
+        'https://file-browser-production-477d.up.railway.app',
+        '_blank',
+        'toolbar=0,location=0,status=0,menubar=0,width=1200,height=800'
+    );
+}
+</script>
         <aside id="leftSidebar">
-          <li><a href="#music">Music</a></li>
-          <li><a href="#photos">Photos</a></li>
+          <li>hi guys heres my music file browser shit</li>
         </aside>
 
       <footer id="footer"></footer>
