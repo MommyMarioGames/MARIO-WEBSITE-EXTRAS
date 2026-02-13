@@ -2,62 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mario's Site!</title>
-  <script>
-  window.addEventListener('load', () => {
-    const testAudio = document.getElementById("testAudio");
-    const nextAudio = document.getElementById("nextAudio");
-    const soundPopup = document.getElementById("soundPopup");
-    const enableBtn = document.getElementById("enableSoundButton");
+  <title>Mario's Site! (BETA TEST)</title>
 
-    if (!testAudio || !nextAudio || !soundPopup || !enableBtn) {
-      console.warn("Audio elements or popup/button missing!");
-      return;
-    }
-
-    let played = false;
-
-    testAudio.play().then(() => {
-      played = true;
-      soundPopup.style.display = "none";
-    }).catch(() => {
-      setTimeout(() => {
-        if (!played) {
-          soundPopup.style.display = "flex";
-        }
-      }, 1000);
-    });
-
-    testAudio.addEventListener("ended", () => {
-      nextAudio.play().catch(err => {
-        console.warn("Next audio play failed:", err);
-      });
-    });
-
-    enableBtn.addEventListener("click", () => {
-      testAudio.play().then(() => {
-        soundPopup.style.display = "none";
-      }).catch(() => {
-        alert("Audio could not be played. Please try again or check your browser settings.");
-      });
-    });
-  });
-</script>
-
-</head>
-<body>
-
-<audio id="testAudio" preload="auto" src="https://files.catbox.moe/1vorne.mp3"></audio>
-
-<audio id="nextAudio" preload="auto" src="https://files.catbox.moe/1vorne.mp3"></audio>
-
-<div id="soundPopup" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.8); color:white; 
-  display:flex; justify-content:center; align-items:center; flex-direction:column; gap:20px; font-size:1.5em;">
-  <p>Please enable sound to continue listening :)</p>
-  <button id="enableSoundButton" style="font-size:1em; padding:10px 20px; cursor:pointer; border:none; border-radius:6px; background-color:#4CAF50; color:white;">Enable Sound</button>
+<!-- Warning Banner -->
+<div id="content-warning-banner">
+  <strong>Content Warning:</strong> This page contains mature themes. Like: Racism, Sexual Themes, Extreme Use of Profanity, Weird Gifs, etc.
 </div>
 
-
+  
   <!-- Custom Loader -->
   <div id="loader">
     <h1>Hello World!</h1>
@@ -67,12 +19,6 @@
 
   <!-- Main Site Content -->
   <div id="main-content">
-
-    <div id="soundPopup" class="popup-overlay" style="display:none;">
-      <div class="popup-box">
-        <p>pls change sound to allow to continue visiting the site :) unless everything is just preloading.</p>
-      </div>
-    </div>
 
       <!-- Main Content -->
     <div id="container">
@@ -505,7 +451,7 @@ html{
       margin-bottom: 20px;
     }
 
-    #skipButton {
+      #skipButton {
       padding: 10px 20px;
       background: #ff0000;
       border: none;
@@ -515,4 +461,51 @@ html{
       cursor: pointer;
     }
 
+   #content-warning-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
+    }
+
+    .modal-box {
+      background: black;
+      padding: 25px;
+      max-width: 420px;
+      text-align: center;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      font-family: 'I know a ghost', sans-serif;
+      font-size: 20px;
+    }
+    
+     /* Banner */
+      #content-warning-banner {
+        background: #1f1f1f;
+        color: #fff;
+        padding: 12px;
+        text-align: center;
+        font-size: 30px;
+      }
+
         </style>
+
+<script>
+function acceptWarning() {
+  console.log("accept clicked");
+  document.getElementById("content-warning-modal").style.display = "none";
+}
+
+function leavePage() {
+  console.log("leave clicked");
+  window.location.href = "https://www.youtube.com/watch?v=e_04ZrNroTo&pp=ygUJY29jb21lbG9u0gcJCZEKAYcqIYzv";
+}
+</script>
